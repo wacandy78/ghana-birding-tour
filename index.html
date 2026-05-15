@@ -28,7 +28,7 @@
         section { padding: 100px 40px; }
         .section-title { font-family: 'Crimson Text', serif; font-size: 3rem; color: #1a4d3e; margin-bottom: 50px; text-align: center; position: relative; padding-bottom: 30px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: linear-gradient(90deg, transparent, #8b9d7f, transparent); }
-        .parks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+        .parks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px; max-width: 1200px; margin-left: auto; margin-right: auto; }
         .park-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease; animation: fadeInUp 0.8s ease-out; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .park-card:nth-child(2) { animation-delay: 0.2s; }
@@ -45,12 +45,6 @@
         .bird-highlights { background: #f9f6f0; padding: 20px; border-left: 4px solid #8b9d7f; border-radius: 4px; margin: 20px 0; }
         .bird-highlights p { font-size: 0.95rem; color: #555; margin-bottom: 8px; }
         .bird-highlights p:last-child { margin-bottom: 0; }
-        .comparison { background: white; padding: 60px; border-radius: 12px; margin: 80px 0; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
-        .comparison-table { width: 100%; border-collapse: collapse; }
-        .comparison-table th { background: #1a4d3e; color: white; padding: 20px; text-align: left; font-weight: 600; font-size: 1.1rem; }
-        .comparison-table td { padding: 20px; border-bottom: 1px solid #e8e1d6; }
-        .comparison-table tr:nth-child(even) { background: #f9f6f0; }
-        .comparison-table tr:hover { background: #f0ebe0; }
         .itinerary { background: linear-gradient(135deg, #f5f1e8, #e8ddd2); padding: 80px 40px; }
         .itinerary-item { background: white; padding: 30px; margin-bottom: 30px; border-radius: 8px; border-left: 4px solid #8b9d7f; transition: all 0.3s ease; }
         .itinerary-item:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateX(10px); }
@@ -61,7 +55,7 @@
         .contact h2 { font-family: 'Crimson Text', serif; font-size: 2.8rem; margin-bottom: 20px; }
         .contact p { font-size: 1.1rem; margin-bottom: 40px; opacity: 0.95; }
         footer { background: #0d2818; color: rgba(255,255,255,0.8); text-align: center; padding: 30px; font-size: 0.95rem; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.1rem; } nav { padding: 15px 20px; } nav a { margin-left: 20px; display: none; } section { padding: 60px 20px; } .parks-grid { grid-template-columns: 1fr; gap: 40px; } .section-title { font-size: 2rem; } .park-content h3 { font-size: 1.8rem; } .comparison { padding: 30px 20px; } .comparison-table th, .comparison-table td { padding: 12px; font-size: 0.9rem; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.1rem; } nav { padding: 15px 20px; } nav a { margin-left: 20px; display: none; } section { padding: 60px 20px; } .parks-grid { grid-template-columns: 1fr; gap: 40px; } .section-title { font-size: 2rem; } .park-content h3 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
@@ -69,8 +63,8 @@
         <div class="logo">🦅 西非賞鳥探險</div>
         <div>
             <a href="#parks">公園介紹</a>
-            <a href="#comparison">對比</a>
             <a href="#itinerary">行程安排</a>
+            <a href="#accommodation">住宿</a>
         </div>
     </nav>
 
@@ -81,269 +75,220 @@
             <button class="cta-button">立即預訂</button>
         </div>
     </section>
-    <h2 class="section-title">三大國家公園與文化景點</h2>
 
-            <div class="parks-grid">
-                <!-- Mole National Park -->
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8823.jpeg" alt="莫宗瑞亞國家公園"></div>
-                    <div class="park-content">
-                        <h3>莫宗瑞亞國家公園</h3>
-                        <span class="bird-count">🦅 多樣化鳥類生態</span>
-                        <div class="park-description">位於迦納北部薩瓦納地區，莫宗瑞亞是西非最大的國家公園。園內茂密的森林和遼闊的草原為眾多野生動物提供了完美的棲息地。</div>
-                        <div class="bird-highlights">
-                            <p><strong>主要鳥類：</strong></p>
-                            <p>✓ 各種鷹鷲與獵鷹<br>✓ 鸛鳥和蒼鷺<br>✓ 五彩斑斕的蜂虎<br>✓ 珍稀的戰鷲和非洲雕</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">🏕️ Zaina Lodge</span>
-                            <span class="feature-tag">🚶 專業導遊</span>
-                            <span class="feature-tag">📍 隱蔽觀察點</span>
-                            <span class="feature-tag">🌙 夜間探險</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 每天清晨由專業導遊帶領進行深度森林漫步和野生動物觀察。園內設有多個隱蔽的觀鳥點，距離大象和其他野生動物保持安全距離。住在優雅的樹屋，盡享自然與奢華的完美結合。
-                        </div>
+    <section id="parks">
+        <h2 class="section-title">三大國家公園與文化景點</h2>
+        <div class="parks-grid">
+            <!-- Mole National Park -->
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8823.jpeg" alt="莫宗瑞亞國家公園"></div>
+                <div class="park-content">
+                    <h3>莫宗瑞亞國家公園</h3>
+                    <span class="bird-count">🦅 多樣化鳥類生態</span>
+                    <div class="park-description">位於迦納北部薩瓦納地區，莫宗瑞亞是西非最大的國家公園。園內茂密的森林和遼闊的草原為眾多野生動物提供了完美的棲息地。</div>
+                    <div class="bird-highlights">
+                        <p><strong>主要鳥類：</strong></p>
+                        <p>✓ 各種鷹鷲與獵鷹<br>✓ 鸛鳥和蒼鷺<br>✓ 五彩斑斕的蜂虎<br>✓ 珍稀的戰鷲和非洲雕</p>
                     </div>
-                </div>
-
-                <!-- Accra Slave Castle -->
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8825.jpeg" alt="Accra 奴隸堡"></div>
-                    <div class="park-content">
-                        <h3>Cape Coast Castle - 阿克拉奴隸堡</h3>
-                        <span class="bird-count">🏛️ 歷史文化遺跡</span>
-                        <div class="park-description">位於迦納阿克拉附近的 Cape Coast Castle 是西非最重要的歷史遺跡之一。這座 17 世紀的堡壘見證了奴隸貿易的黑暗歷史，現已成為緬懷歷史、尊重人權的重要紀念地。</div>
-                        <div class="bird-highlights">
-                            <p><strong>參訪亮點：</strong></p>
-                            <p>✓ 奴隸地下牢房<br>✓ 歷史展覽與檔案<br>✓ 海濱要塞建築<br>✓ 教育與反思空間</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">📜 世界遺產</span>
-                            <span class="feature-tag">🏰 古堡建築</span>
-                            <span class="feature-tag">📚 歷史博物館</span>
-                            <span class="feature-tag">🌊 海濱景觀</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 參加專業導遊帶領的參訪，深入瞭解大西洋奴隸貿易的歷史。參觀地下牢房、見證廳和紀念區，感受歷史的重量。這是認識迦納文化與人性尊嚴的必訪之地。
-                        </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">🏕️ Zaina Lodge</span>
+                        <span class="feature-tag">🚶 專業導遊</span>
+                        <span class="feature-tag">📍 隱蔽觀察點</span>
+                        <span class="feature-tag">🌙 夜間探險</span>
                     </div>
-                </div>
-
-                <!-- Kakum National Park -->
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8818.jpeg" alt="卡庫姆國家公園"></div>
-                    <div class="park-content">
-                        <h3>卡庫姆國家公園</h3>
-                        <span class="bird-count">🦅 超過 300 種鳥類</span>
-                        <div class="park-description">位於迦納中南部的雨林地區，卡庫姆以其令人驚嘆的 7 條懸空走廊聞名世界。走在距離森林地面 27 公尺高的樹頂上，俯瞰這片古老的雨林生態系統。</div>
-                        <div class="bird-highlights">
-                            <p><strong>主要鳥類：</strong></p>
-                            <p>✓ 華麗的翠鳥<br>✓ 多彩的蜂虎<br>✓ 稀有的夜鷲<br>✓ 吸蜜鳥和啄木鳥</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">🌳 樹冠走廊</span>
-                            <span class="feature-tag">🔭 遠距望遠鏡觀察</span>
-                            <span class="feature-tag">🌙 夜間生態探險</span>
-                            <span class="feature-tag">📸 攝影天堂</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 穿梭於 333 公尺長的懸空走廊，與鳥類在樹冠層相遇。使用高倍望遠鏡從訪客中心觀察稀有鳥種，或參加引人入勝的夜間生態探險。園內設有露營設施和樹屋住宿，深度體驗原始雨林。
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Yamoussokro Basilica -->
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8826.jpeg" alt="Yamoussokro 大教堂"></div>
-                    <div class="park-content">
-                        <h3>Basilica of Our Lady of Peace - Yamoussokro 聖殿大教堂</h3>
-                        <span class="bird-count">⛪ 宗教建築奇跡</span>
-                        <div class="park-description">位於象牙海岸 Yamoussokro 的聖殿聖母大教堂是世界第五大教堂，以其宏偉的建築與精美的設計聞名。這座現代宗教建築融合了非洲元素與歐洲古典風格，是信仰與藝術的完美結合。</div>
-                        <div class="bird-highlights">
-                            <p><strong>參訪亮點：</strong></p>
-                            <p>✓ 世界第五大教堂<br>✓ 宏偉的玻璃穹頂<br>✓ 精美的彩繪玻璃<br>✓ 寧靜的禮拜空間</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">⛪ 宗教建築</span>
-                            <span class="feature-tag">🎨 藝術與設計</span>
-                            <span class="feature-tag">📷 攝影勝地</span>
-                            <span class="feature-tag">🙏 靈性體驗</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 進入寧靜的教堂內部，欣賞宏偉的建築與精美的彩繪玻璃。從穹頂向下望，光線透過玻璃灑落，創造神聖的氛圍。無論信仰背景如何，都能感受到建築的壯觀與藝術的美妙。
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Banco National Park -->
-                <div class="park-card">
-                    <div class="park-image"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=300&fit=crop" alt="Banco 國家公園"></div>
-                    <div class="park-content">
-                        <h3>Banco 國家公園 - 象牙海岸城市森林</h3>
-                        <span class="bird-count">🦅 200+ 種鳥類</span>
-                        <div class="park-description">位於象牙海岸首都 Abidjan 郊外的獨特城市國家公園。這片古老的熱帶雨林被現代城市包圍，卻保留了原始的生態系統，是都市邊緣的綠色寶藏。</div>
-                        <div class="bird-highlights">
-                            <p><strong>主要鳥類：</strong></p>
-                            <p>✓ 各種叢林鶲鳥<br>✓ 五彩的太陽鳥<br>✓ 西非特有的鸚鵡<br>✓ 稀有的夜鷲與蒼鷺</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">🌳 城市邊緣森林</span>
-                            <span class="feature-tag">🥾 自然步道</span>
-                            <span class="feature-tag">🐒 靈長類動物</span>
-                            <span class="feature-tag">📸 攝影機會</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 在繁華都市中體驗原始森林生態。園內有多條自然步道供散步與賞鳥，靈長類動物經常在樹上活動。是了解象牙海岸自然保護工作的獨特窗口，也是城市生態旅遊的典範。
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Abidjan Cathedral -->
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8824.jpeg" alt="Abidjan 聖保羅大教堂"></div>
-                    <div class="park-content">
-                        <h3>St. Paul's Cathedral - Abidjan 聖保羅大教堂</h3>
-                        <span class="bird-count">⛪ 城市文化地標</span>
-                        <div class="park-description">位於象牙海岸首都 Abidjan 的聖保羅大教堂是城市的宗教與文化象徵。這座現代建築融合了當代設計與傳統宗教元素，在城市天際線中顯得格外醒目，是 Abidjan 不可錯過的景點。</div>
-                        <div class="bird-highlights">
-                            <p><strong>參訪亮點：</strong></p>
-                            <p>✓ 現代建築傑作<br>✓ 獨特的鐘塔設計<br>✓ 城市全景視角<br>✓ 文化交流中心</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">⛪ 城市地標</span>
-                            <span class="feature-tag">🏗️ 現代建築</span>
-                            <span class="feature-tag">🌃 城市天際線</span>
-                            <span class="feature-tag">🎭 文化活動</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 登上教堂高塔，俯瞰 Abidjan 的城市全景與潟湖景觀。參加當地文化活動或音樂表演，體驗 Abidjan 作為西非文化中心的活力。教堂經常舉辦展覽與文化講座。
-                        </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 每天清晨由專業導遊帶領進行深度森林漫步和野生動物觀察。園內設有多個隱蔽的觀鳥點，距離大象和其他野生動物保持安全距離。住在優雅的樹屋，盡享自然與奢華的完美結合。
                     </div>
                 </div>
             </div>
 
-                </div>
-            </div>
-
-
-            <div style="text-align: center; margin: 80px 0 60px; padding: 40px; background: linear-gradient(135deg, #f0ebe0, #e8ddd2); border-radius: 12px;">
-                <h3 style="font-family: 'Crimson Text', serif; font-size: 2.2rem; color: #1a4d3e; margin-bottom: 15px;">延伸探險</h3>
-                <p style="color: #666; font-size: 1.1rem; margin-bottom: 0;">從迦納跨越邊界，深入象牙海岸的海灘與城市魅力</p>
-            </div>
-
-            <div class="parks-grid">
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8819.jpeg" alt="Assinie海灘"></div>
-                    <div class="park-content">
-                        <h3>Assinie - 象牙海岸海灘度假</h3>
-                        <span class="bird-count">🏖️ 沿海生態天堂</span>
-                        <div class="park-description">Assinie 是象牙海岸東南部的靜謐海濱小鎮，擁有金黃色沙灘和清澈的大西洋海水。這個度假勝地結合了自然美景與文化特色，是逃離城市喧囂的理想之地。</div>
-                        <div class="bird-highlights">
-                            <p><strong>沿海鳥類：</strong></p>
-                            <p>✓ 鸕鷀和蒼鷺群<br>✓ 魚鷹和海鷲<br>✓ 翠鳥和潛水鳥<br>✓ 沙灘鳶（稀有）</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">🦀 瀉湖生態</span>
-                            <span class="feature-tag">🐚 沿海濕地</span>
-                            <span class="feature-tag">🌅 日出觀賞</span>
-                            <span class="feature-tag">🏨 度假村</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 清晨在潟湖觀賞遷徙水鳥，漫步沙灘尋覓沿海物種。下午在海邊度假村放鬆，享受新鮮海鮮與冷飲。Assinie 是從野生動物探險到悠閒度假的完美轉銜。
-                        </div>
+            <!-- Accra Slave Castle -->
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8825.jpeg" alt="Accra 奴隸堡"></div>
+                <div class="park-content">
+                    <h3>Cape Coast Castle - 阿克拉奴隸堡</h3>
+                    <span class="bird-count">🏛️ 歷史文化遺跡</span>
+                    <div class="park-description">位於迦納阿克拉附近的 Cape Coast Castle 是西非最重要的歷史遺跡之一。這座 17 世紀的堡壘見證了奴隸貿易的黑暗歷史，現已成為緬懷歷史、尊重人權的重要紀念地。</div>
+                    <div class="bird-highlights">
+                        <p><strong>參訪亮點：</strong></p>
+                        <p>✓ 奴隸地下牢房<br>✓ 歷史展覽與檔案<br>✓ 海濱要塞建築<br>✓ 教育與反思空間</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">📜 世界遺產</span>
+                        <span class="feature-tag">🏰 古堡建築</span>
+                        <span class="feature-tag">📚 歷史博物館</span>
+                        <span class="feature-tag">🌊 海濱景觀</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 參加專業導遊帶領的參訪，深入瞭解大西洋奴隸貿易的歷史。參觀地下牢房、見證廳和紀念區，感受歷史的重量。這是認識迦納文化與人性尊嚴的必訪之地。
                     </div>
                 </div>
-                <div class="park-card">
-                    <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8820.jpeg"" alt="Abidjan都市景觀"></div>
-                    <div class="park-content">
-                        <h3>Abidjan - 象牙海岸現代都市</h3>
-                        <span class="bird-count">🏙️ 西非文化樞紐</span>
-                        <div class="park-description">Abidjan 是象牙海岸最大的城市，也是西非最現代化的都市之一。這座城市坐落在美麗的潟湖之上，融合了當代建築、豐富的文化與充滿活力的夜生活。</div>
-                        <div class="bird-highlights">
-                            <p><strong>城市自然體驗：</strong></p>
-                            <p>✓ Banco 國家公園城市森林<br>✓ 潟湖水鳥觀察<br>✓ 市郊自然保護區<br>✓ 都市公園棲息地</p>
-                        </div>
-                        <div class="highlight-features">
-                            <span class="feature-tag">🎨 當代美術館</span>
-                            <span class="feature-tag">🛍️ 現代購物中心</span>
-                            <span class="feature-tag">🍽️ 美食之都</span>
-                            <span class="feature-tag">🌃 夜生活</span>
-                        </div>
-                        <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
-                            <strong>體驗亮點：</strong> 參訪美術館與文化中心探索象牙海岸藝術。在 Banco 國家公園進行城市邊緣賞鳥，發現潟湖邊的野生動物。享受國際美食與購物，感受西非最繁華的都市活力。
-                        </div>
-                    </div>            
             </div>
 
-            
+            <!-- Kakum National Park -->
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8818.jpeg" alt="卡庫姆國家公園"></div>
+                <div class="park-content">
+                    <h3>卡庫姆國家公園</h3>
+                    <span class="bird-count">🦅 超過 300 種鳥類</span>
+                    <div class="park-description">位於迦納中南部的雨林地區，卡庫姆以其令人驚嘆的 7 條懸空走廊聞名世界。走在距離森林地面 27 公尺高的樹頂上，俯瞰這片古老的雨林生態系統。</div>
+                    <div class="bird-highlights">
+                        <p><strong>主要鳥類：</strong></p>
+                        <p>✓ 華麗的翠鳥<br>✓ 多彩的蜂虎<br>✓ 稀有的夜鷲<br>✓ 吸蜜鳥和啄木鳥</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">🌳 樹冠走廊</span>
+                        <span class="feature-tag">🔭 遠距望遠鏡觀察</span>
+                        <span class="feature-tag">🌙 夜間生態探險</span>
+                        <span class="feature-tag">📸 攝影天堂</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 穿梭於 333 公尺長的懸空走廊，與鳥類在樹冠層相遇。使用高倍望遠鏡從訪客中心觀察稀有鳥種，或參加引人入勝的夜間生態探險。園內設有露營設施和樹屋住宿，深度體驗原始雨林。
+                    </div>
+                </div>
+            </div>
 
+            <!-- Yamoussokro Basilica -->
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8826.jpeg" alt="Yamoussokro 大教堂"></div>
+                <div class="park-content">
+                    <h3>Basilica of Our Lady of Peace - Yamoussokro 聖殿大教堂</h3>
+                    <span class="bird-count">⛪ 宗教建築奇跡</span>
+                    <div class="park-description">位於象牙海岸 Yamoussokro 的聖殿聖母大教堂是世界第五大教堂，以其宏偉的建築與精美的設計聞名。這座現代宗教建築融合了非洲元素與歐洲古典風格，是信仰與藝術的完美結合。</div>
+                    <div class="bird-highlights">
+                        <p><strong>參訪亮點：</strong></p>
+                        <p>✓ 世界第五大教堂<br>✓ 宏偉的玻璃穹頂<br>✓ 精美的彩繪玻璃<br>✓ 寧靜的禮拜空間</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">⛪ 宗教建築</span>
+                        <span class="feature-tag">🎨 藝術與設計</span>
+                        <span class="feature-tag">📷 攝影勝地</span>
+                        <span class="feature-tag">🙏 靈性體驗</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 進入寧靜的教堂內部，欣賞宏偉的建築與精美的彩繪玻璃。從穹頂向下望，光線透過玻璃灑落，創造神聖的氛圍。無論信仰背景如何，都能感受到建築的壯觀與藝術的美妙。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banco National Park -->
+            <div class="park-card">
+                <div class="park-image"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=300&fit=crop" alt="Banco 國家公園"></div>
+                <div class="park-content">
+                    <h3>Banco 國家公園 - 象牙海岸城市森林</h3>
+                    <span class="bird-count">🦅 200+ 種鳥類</span>
+                    <div class="park-description">位於象牙海岸首都 Abidjan 郊外的獨特城市國家公園。這片古老的熱帶雨林被現代城市包圍，卻保留了原始的生態系統，是都市邊緣的綠色寶藏。</div>
+                    <div class="bird-highlights">
+                        <p><strong>主要鳥類：</strong></p>
+                        <p>✓ 各種叢林鶲鳥<br>✓ 五彩的太陽鳥<br>✓ 西非特有的鸚鵡<br>✓ 稀有的夜鷲與蒼鷺</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">🌳 城市邊緣森林</span>
+                        <span class="feature-tag">🥾 自然步道</span>
+                        <span class="feature-tag">🐒 靈長類動物</span>
+                        <span class="feature-tag">📸 攝影機會</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 在繁華都市中體驗原始森林生態。園內有多條自然步道供散步與賞鳥，靈長類動物經常在樹上活動。是了解象牙海岸自然保護工作的獨特窗口，也是城市生態旅遊的典範。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abidjan Cathedral -->
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8824.jpeg" alt="Abidjan 聖保羅大教堂"></div>
+                <div class="park-content">
+                    <h3>St. Paul's Cathedral - Abidjan 聖保羅大教堂</h3>
+                    <span class="bird-count">⛪ 城市文化地標</span>
+                    <div class="park-description">位於象牙海岸首都 Abidjan 的聖保羅大教堂是城市的宗教與文化象徵。這座現代建築融合了當代設計與傳統宗教元素，在城市天際線中顯得格外醒目，是 Abidjan 不可錯過的景點。</div>
+                    <div class="bird-highlights">
+                        <p><strong>參訪亮點：</strong></p>
+                        <p>✓ 現代建築傑作<br>✓ 獨特的鐘塔設計<br>✓ 城市全景視角<br>✓ 文化交流中心</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">⛪ 城市地標</span>
+                        <span class="feature-tag">🏗️ 現代建築</span>
+                        <span class="feature-tag">🌃 城市天際線</span>
+                        <span class="feature-tag">🎭 文化活動</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 登上教堂高塔，俯瞰 Abidjan 的城市全景與潟湖景觀。參加當地文化活動或音樂表演，體驗 Abidjan 作為西非文化中心的活力。教堂經常舉辦展覽與文化講座。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 80px 0 60px; padding: 40px; background: linear-gradient(135deg, #f0ebe0, #e8ddd2); border-radius: 12px;">
+            <h3 style="font-family: 'Crimson Text', serif; font-size: 2.2rem; color: #1a4d3e; margin-bottom: 15px;">延伸探險</h3>
+            <p style="color: #666; font-size: 1.1rem; margin-bottom: 0;">從迦納跨越邊界，深入象牙海岸的海灘與城市魅力</p>
+        </div>
+
+        <div class="parks-grid">
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8819.jpeg" alt="Assinie海灘"></div>
+                <div class="park-content">
+                    <h3>Assinie - 象牙海岸海灘度假</h3>
+                    <span class="bird-count">🏖️ 沿海生態天堂</span>
+                    <div class="park-description">Assinie 是象牙海岸東南部的靜謐海濱小鎮，擁有金黃色沙灘和清澈的大西洋海水。這個度假勝地結合了自然美景與文化特色，是逃離城市喧囂的理想之地。</div>
+                    <div class="bird-highlights">
+                        <p><strong>沿海鳥類：</strong></p>
+                        <p>✓ 鸕鷀和蒼鷺群<br>✓ 魚鷹和海鷲<br>✓ 翠鳥和潛水鳥<br>✓ 沙灘鳶（稀有）</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">🦀 瀉湖生態</span>
+                        <span class="feature-tag">🐚 沿海濕地</span>
+                        <span class="feature-tag">🌅 日出觀賞</span>
+                        <span class="feature-tag">🏨 度假村</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 清晨在潟湖觀賞遷徙水鳥，漫步沙灘尋覓沿海物種。下午在海邊度假村放鬆，享受新鮮海鮮與冷飲。Assinie 是從野生動物探險到悠閒度假的完美轉銜。
+                    </div>
+                </div>
+            </div>
+            <div class="park-card">
+                <div class="park-image"><img src="https://raw.githubusercontent.com/Wacandy78/ghana-birding-tour/main/IMG_8820.jpeg" alt="Abidjan都市景觀"></div>
+                <div class="park-content">
+                    <h3>Abidjan - 象牙海岸現代都市</h3>
+                    <span class="bird-count">🏙️ 西非文化樞紐</span>
+                    <div class="park-description">Abidjan 是象牙海岸最大的城市，也是西非最現代化的都市之一。這座城市坐落在美麗的潟湖之上，融合了當代建築、豐富的文化與充滿活力的夜生活。</div>
+                    <div class="bird-highlights">
+                        <p><strong>城市自然體驗：</strong></p>
+                        <p>✓ Banco 國家公園城市森林<br>✓ 潟湖水鳥觀察<br>✓ 市郊自然保護區<br>✓ 都市公園棲息地</p>
+                    </div>
+                    <div class="highlight-features">
+                        <span class="feature-tag">🎨 當代美術館</span>
+                        <span class="feature-tag">🛍️ 現代購物中心</span>
+                        <span class="feature-tag">🍽️ 美食之都</span>
+                        <span class="feature-tag">🌃 夜生活</span>
+                    </div>
+                    <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <strong>體驗亮點：</strong> 參訪美術館與文化中心探索象牙海岸藝術。在 Banco 國家公園進行城市邊緣賞鳥，發現潟湖邊的野生動物。享受國際美食與購物，感受西非最繁華的都市活力。
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="comparison{
-  width: 100%;
-}">
-        <h2 class="section-title">公園對比</h2>
-        <div class="comparison{
-  width: 100%;
-}">
-            <table class="comparison-table.comparison-table {
-  width: 100%;
-}">
-                <thead>
-                    <tr>
-                        <th>特性</th>
-                        <th>莫宗瑞亞國家公園</th>
-                        <th>卡庫姆國家公園</th>
-                        <th>班科國家公園</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>位置</strong></td><td>迦納北部</td><td>迦納中南部</td><td>象牙海岸郊外</td></tr>
-                    <tr><td><strong>地形</strong></td><td>森林草原混合</td><td>古老熱帶雨林</td><td>城市邊森林</td></tr>
-                    <tr><td><strong>鳥類</strong></td><td>多種鳥類</td><td>300+ 種</td><td>200+ 種</td></tr>
-                    <tr><td><strong>其他野生動物</strong></td><td>大象、獅子、豹</td><td>蝴蝶(600+種）、靈長類</td><td>靈長類、林羚、各種昆蟲</td></tr>
-                    <tr><td><strong>體驗活動</strong></td><td>夜間導覽、清晨漫步</td><td>樹冠漫步、夜間生態遊</td><td>城市邊緣賞鳥、文化遊</td></tr>
-                    <tr><td><strong>最佳造訪季節</strong></td><td>11月-3月（乾季）</td><td>12月-2月（相對乾燥）</td><td>全年皆可</td></tr>
-                    <tr><td><strong>遊覽時長</strong></td><td>2天</td><td>1天</td><td>1天</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-   <section id="accommodation">
-    <div class="container">
+    <section id="accommodation">
         <h2 class="section-title">精選住宿</h2>
-        
-        <div class="parks-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 80px;">
-
-
+        <div class="parks-grid">
             <!-- Accra Hotel -->
             <div class="park-card">
                 <div class="park-image"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=300&fit=crop" alt="Accra 五星酒店"></div>
                 <div class="park-content">
                     <h3>Accra Luxury Hotel - 迦納首都歡迎住宿</h3>
                     <span class="bird-count">🏨 四星城市酒店</span>
-                    
-                    <div class="park-description">
-                        位於迦納首都阿克拉的現代五星酒店。提供舒適優雅的住宿環境，靠近市中心景點與購物區。是抵達迦納和返程前的理想休息地點。
-                    </div>
-
+                    <div class="park-description">位於迦納首都阿克拉的現代五星酒店。提供舒適優雅的住宿環境，靠近市中心景點與購物區。是抵達迦納和返程前的理想休息地點。</div>
                     <div class="bird-highlights">
                         <p><strong>設施與服務：</strong></p>
                         <p>✓ 現代化豪華房間<br>✓ 室內游泳池<br>✓ 健身房與 SPA<br>✓ 多家餐廳酒吧<br>✓ 24 小時禮賓服務</p>
                     </div>
-
                     <div class="highlight-features">
                         <span class="feature-tag">🏙️ 城市中心位置</span>
                         <span class="feature-tag">🍽️ 國際美食</span>
                         <span class="feature-tag">🏊 游泳池</span>
                         <span class="feature-tag">💆 SPA 服務</span>
                     </div>
-
                     <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
                         <strong>住宿體驗：</strong> 在迦納首都舒適休息，調整時差，準備冒險。酒店靠近國家博物館、市場和海灘，提供城市探索的便利。
                     </div>
@@ -356,23 +301,17 @@
                 <div class="park-content">
                     <h3>Zaina Lodge - 野奢度假屋</h3>
                     <span class="bird-count">🏕️ 豪華帳篷住宿</span>
-                    
-                    <div class="park-description">
-                        Zaina Lodge 是西非第一座野奢旅館，以24間帳篷式木屋、草原景觀、野生動物體驗與高端接待服務帶領旅人感受西非最原始的國家公園。
-                    </div>
-
+                    <div class="park-description">Zaina Lodge 是西非第一座野奢旅館，以24間帳篷式木屋、草原景觀、野生動物體驗與高端接待服務帶領旅人感受西非最原始的國家公園。</div>
                     <div class="bird-highlights">
                         <p><strong>設施與服務：</strong></p>
                         <p>✓ 豪華樹屋套房<br>✓ 私人露台與觀景點<br>✓ 專業生態導遊<br>✓ 全天餐飲服務<br>✓ 清晨與夜間導覽</p>
                     </div>
-
                     <div class="highlight-features">
                         <span class="feature-tag">🏕️ 木屋建築</span>
                         <span class="feature-tag">🍽️ 高級餐廳</span>
                         <span class="feature-tag">🔥 篝火夜間</span>
                         <span class="feature-tag">🌿 生態體驗</span>
                     </div>
-
                     <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
                         <strong>住宿體驗：</strong> 從樹屋陽台直接觀賞野生動物，享受頂級的生態旅遊體驗。餐點採用當地食材烹飪，提供國際與非洲菜餚。專業導遊帶領清晨與夜間的賞鳥探險。
                     </div>
@@ -385,23 +324,17 @@
                 <div class="park-content">
                     <h3>Assinie Mafia Resort - 象牙海岸海灘度假村</h3>
                     <span class="bird-count">🏖️ 五星海灘度假</span>
-                    
-                    <div class="park-description">
-                        Assinie Mafia Resort 是象牙海岸東南部的頂級海灘度假村，坐擁金黃色沙灘和清澈海水。融合了現代建築與傳統西非文化，提供度假與生態旅遊的完美結合。
-                    </div>
-
+                    <div class="park-description">Assinie Mafia Resort 是象牙海岸東南部的頂級海灘度假村，坐擁金黃色沙灘和清澈海水。融合了現代建築與傳統西非文化，提供度假與生態旅遊的完美結合。</div>
                     <div class="bird-highlights">
                         <p><strong>設施與服務：</strong></p>
                         <p>✓ 海景豪華房間<br>✓ 私人海灘區域<br>✓ 瀉湖生態導遊<br>✓ 水上活動<br>✓ SPA 與健身設施</p>
                     </div>
-
                     <div class="highlight-features">
                         <span class="feature-tag">🌊 私人海灘</span>
                         <span class="feature-tag">🏊 游泳池與水療</span>
                         <span class="feature-tag">🍽️ 海鮮餐廳</span>
                         <span class="feature-tag">🌅 日落酒吧</span>
                     </div>
-
                     <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
                         <strong>住宿體驗：</strong> 享受海灘度假的奢華，同時進行沿海生態探險。度假村提供水上運動、spa 服務，以及與當地漁民互動的文化體驗。清晨可在泻湖進行賞鳥活動。
                     </div>
@@ -414,23 +347,17 @@
                 <div class="park-content">
                     <h3>Abidjan City Palace - 象牙海岸都市奢華</h3>
                     <span class="bird-count">🏙️ 四星城市酒店</span>
-                    
-                    <div class="park-description">
-                        位於 Abidjan 的現代奢華酒店，將當代建築與西非設計完美融合。從房間可俯瞰城市景觀，提供西非頂級的都市旅遊體驗。
-                    </div>
-
+                    <div class="park-description">位於 Abidjan 的現代奢華酒店，將當代建築與西非設計完美融合。從房間可俯瞰城市景觀，提供西非頂級的都市旅遊體驗。</div>
                     <div class="bird-highlights">
                         <p><strong>設施與服務：</strong></p>
                         <p>✓ 市景豪華房<br>✓ 米其林等級餐廳<br>✓ 露天游泳池<br>✓ 商務與會議設施<br>✓ 24 小時禮賓服務</p>
                     </div>
-
                     <div class="highlight-features">
                         <span class="feature-tag">🏢 現代建築</span>
                         <span class="feature-tag">🍽️ 國際美食</span>
                         <span class="feature-tag">🎭 夜生活與酒吧</span>
                         <span class="feature-tag">💼 商務設施</span>
                     </div>
-
                     <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
                         <strong>住宿體驗：</strong> 享受西非最現代化城市的奢華體驗。酒店鄰近美術館、購物中心和夜生活區，是城市探險的理想基地。可在潟湖邊進行賞鳥活動。
                     </div>
@@ -443,39 +370,29 @@
                 <div class="park-content">
                     <h3>Yamoussokro Basilica Hotel - 象牙海岸宗教聖地</h3>
                     <span class="bird-count">⛪ 文化宗教體驗</span>
-                    
-                    <div class="park-description">
-                        象牙海岸政治首都亞穆索科的代表性地標飯店。它曾是國家級接待與會議的重要場域之一，也是前總統 Félix Houphouët-Boigny 將家鄉打造為首都過程中的重要建築象徵。
-                    </div>
-
+                    <div class="park-description">象牙海岸政治首都亞穆索科的代表性地標飯店。它曾是國家級接待與會議的重要場域之一，也是前總統 Félix Houphouët-Boigny 將家鄉打造為首都過程中的重要建築象徵。</div>
                     <div class="bird-highlights">
                         <p><strong>設施與服務：</strong></p>
                         <p>✓ 舒適優雅房間<br>✓ 大教堂近距離位置<br>✓ 當地文化導遊<br>✓ 傳統象牙海岸美食<br>✓ 國會建築參觀安排</p>
                     </div>
-
                     <div class="highlight-features">
                         <span class="feature-tag">⛪ 大教堂參訪</span>
                         <span class="feature-tag">🏛️ 國會參觀</span>
                         <span class="feature-tag">🎭 文化體驗</span>
                         <span class="feature-tag">🍽️ 道地美食</span>
                     </div>
-
                     <div style="background: #f9f6f0; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; color: #666;">
                         <strong>住宿體驗：</strong> 參觀世界第五大教堂——聖殿聖母大教堂（Basilica of Our Lady of Peace），探索象牙海岸的政治與宗教中心。酒店提供國會參觀安排和專業文化導遊。
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
+    </section>
 
     <section id="itinerary" class="itinerary">
         <div class="container">
             <h2 class="section-title">推薦 14 天西非之旅</h2>
-            <div class="itinerary-item"><span class="day-number">第 1 天</span><h4>抵達阿克拉 + 休整</h4><p>抵達迦納首都阿克拉。在五星酒店休息調整時差。下午參觀當地市場或博物館瞭解迦納文化。</p></div>
+            <div class="itinerary-item"><span class="day-number">第 1 天</span><h4>抵達阿克拉 + 休整</h4><p>抵達迦納首都阿克拉。在四星酒店休息調整時差。下午參觀當地市場或博物館瞭解迦納文化。</p></div>
             <div class="itinerary-item"><span class="day-number">第 2-3 天</span><h4>莫宗瑞亞國家公園（Zaina Lodge）</h4><p>飛往莫宗瑞亞。入住 Zaina Lodge，享受野奢木屋住宿。第一天適應環境，下午短途漫步。第二天清晨 5:30 開始專業導遊帶領的深度森林漫步，尋覓鷹鷲、蒼鷺、蜂虎等珍稀鳥類。傍晚參加夜間導覽體驗。</p></div>
             <div class="itinerary-item"><span class="day-number">第 4-5 天</span><h4>卡庫姆國家公園</h4><p>返回南部，前往卡庫姆國家公園。體驗著名的樹冠走廊——在距離森林地面 27 公尺的懸空走廊上漫步，與鳥類親密接觸。在訪客中心使用高倍望遠鏡觀察雨林上層的稀有鳥種。參加夜間生態探險體驗夜行性鳥類和動物的世界。</p></div>
             <div class="itinerary-item"><span class="day-number">第 6 天</span><h4>海濱古堡 + 攝影回顧</h4><p>前往附近的海角岸奴隸堡（Cape Coast Castle），探索迦納歷史文化遺產。傍晚整理旅程照片，與導遊分享賞鳥發現與故事。</p></div>
@@ -485,25 +402,9 @@
             <div class="itinerary-item"><span class="day-number">第 9 天</span><h4>Assinie 生態探險</h4><p>全天在 Assinie 體驗多樣化的生態環境。清晨在瀉湖（lagoon）觀賞水鳥和候鳥，下午探索沿海濕地和沙灘棲息地。Assinie 鄰近的濕地和森林邊界是多種鳥類的棲息地，包括魚鷹、翠鳥和稀有的沙灘鳶。可安排當地導遊進行生態導覽，學習象牙海岸獨特的生物多樣性。</p></div>
             <div class="itinerary-item"><span class="day-number">第 10 天</span><h4>Assinie 前往 Abidjan</h4><p>離開海灘度假區，驅車或乘船前往象牙海岸首都 Abidjan（約 1-2 小時車程）。抵達後入住市中心四星飯店，享受現代都市風景。下午在 Abidjan 的兩湖區（Plateau）散步，欣賞建築與文化風景。傍晚在碧湖畔餐廳享用晚餐，體驗西非最繁華城市的夜生活。</p></div>
             <div class="itinerary-item"><span class="day-number">第 11 天</span><h4>Abidjan 文化與自然體驗</h4><p>上午參訪 Abidjan 當代美術館和文化中心，深入瞭解象牙海岸的藝術與歷史。下午前往 Abidjan 郊外的自然保護區 Banco 國家公園，探索城市邊緣的森林生態。這個城市公園內有許多西非本土鳥類，是在都市環境中進行賞鳥的獨特體驗。</p></div>
-                        <div class="itinerary-item">
-                <span class="day-number">第 12 天</span>
-                <h4>Abidjan → Yamoussokro 政治與宗教朝聖</h4>
-                <p>上午驅車前往象牙海岸首都 Yamoussokro（約 2-3 小時車程）。下午遊覽象牙海岸國會大廈（Palais du Gouvernement），瞭解國家的政治中心。品嚐當地特色晚餐。</p>
-            </div>
-
-            <div class="itinerary-item">
-                <span class="day-number">第 13 天</span>
-                <h4>Yamoussokro 文化深度探訪</h4>
-                <p>上午由導遊帶領參觀世界著名的聖殿聖母大教堂（Basilica of Our Lady of Peace），欣賞其宏偉的建築與宗教藝術。文化導覽，深入瞭解 Yamoussokro 的歷史與象牙海岸的政治文化。下午返回 Abidjan，準備返程。晚間享用告別晚宴，回顧整個西非賞鳥與探險之旅。</p>
-            </div>
-
-            <div class="itinerary-item">
-                <span class="day-number">第 14 天</span>
-                <h4>返回家鄉</h4>
-                <p>根據航班時間前往 Abidjan 國際機場（Félix Houphouët-Boigny 機場），乘坐國際航班返回家鄉。結束這場跨越兩個國家、融合賞鳥、探險、海灘度假與文化體驗的難忘西非之旅。</p>
-            </div>
-
-
+            <div class="itinerary-item"><span class="day-number">第 12 天</span><h4>Abidjan → Yamoussokro 政治與宗教朝聖</h4><p>上午驅車前往象牙海岸首都 Yamoussokro（約 2-3 小時車程）。下午遊覽象牙海岸國會大廈（Palais du Gouvernement），瞭解國家的政治中心。品嚐當地特色晚餐。</p></div>
+            <div class="itinerary-item"><span class="day-number">第 13 天</span><h4>Yamoussokro 文化深度探訪</h4><p>上午由導遊帶領參觀世界著名的聖殿聖母大教堂（Basilica of Our Lady of Peace），欣賞其宏偉的建築與宗教藝術。文化導覽，深入瞭解 Yamoussokro 的歷史與象牙海岸的政治文化。下午返回 Abidjan，準備返程。晚間享用告別晚宴，回顧整個西非賞鳥與探險之旅。</p></div>
+            <div class="itinerary-item"><span class="day-number">第 14 天</span><h4>返回家鄉</h4><p>根據航班時間前往 Abidjan 國際機場（Félix Houphouët-Boigny 機場），乘坐國際航班返回家鄉。結束這場跨越兩個國家、融合賞鳥、探險、海灘度假與文化體驗的難忘西非之旅。</p></div>
         </div>
     </section>
 
